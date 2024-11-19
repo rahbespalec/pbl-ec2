@@ -1,0 +1,122 @@
+﻿<Window x:Class="PBL_II_WPF.Animacao"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Animação" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/assets/fundo.jpeg"/>
+        </Grid.Background>
+
+        <!-- Canvas Principal com o cenário -->
+        <Border HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Canvas Name="CanvasPrincipal" Width="600" Height="300" Background="Transparent">
+                <Canvas.Clip>
+                    <RectangleGeometry Rect="0,0,600,300"/>
+                </Canvas.Clip>
+
+                <!-- Imagem do Céu posicionada acima do retângulo laranja -->
+                <Image Name="ImagemCeu" Source="/assets/ceu.jpg" 
+                       Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                       Height="100" Canvas.Top="0" Canvas.Left="0" Panel.ZIndex="0"/>
+
+                <!-- Retângulo laranja preenchendo todo o fundo -->
+                <Rectangle Name="RetanguloLaranja" Height="300" Fill="Orange"
+                          Width="600" Canvas.Left="0" Canvas.Top="0" Panel.ZIndex="1"/>
+
+                <!-- Imagem do Rio preenchendo todo o canvas -->
+                <Image Name="ImagemRio" Source="/assets/rio.png"
+                       Width="769" Height="394" Canvas.Top="-94" Canvas.Left="2" Panel.ZIndex="2"/>
+
+                <!-- Container para a margem esquerda com clipping -->
+                <Canvas Name="ContainerMargemEsquerda" Width="200" Height="300" Panel.ZIndex="3">
+                    <Canvas.Clip>
+                        <RectangleGeometry Rect="0,0,200,300"/>
+                    </Canvas.Clip>
+                    <Image Name="MargemEsquerda" Width="200" Height="300"
+                           Source="/assets/rio-esquerda-transparente.png"/>
+                </Canvas>
+
+                <!-- Container para a margem direita com clipping -->
+                <Canvas Name="ContainerMargemDireita" Width="200" Height="300" Panel.ZIndex="3">
+                    <Canvas.Clip>
+                        <RectangleGeometry Rect="0,0,200,300"/>
+                    </Canvas.Clip>
+                    <Image Name="MargemDireita" Width="200" Height="300"
+                           Source="/assets/rio-direita-transparente.png"
+                           Canvas.Left="0"/>
+                </Canvas>
+
+                <!-- Barco que se moverá com a animação -->
+                <Image Name="Barco" Width="150" Height="100"
+                       Source="/assets/barco.png" Canvas.Left="180" Canvas.Top="120" Panel.ZIndex="4"/>
+            </Canvas>
+        </Border>
+
+        <!-- Botão Voltar no canto superior esquerdo -->
+        <Button Name="btnVoltar" Click="btnVoltar_Click"
+                Width="100" Height="100" Background="Transparent" BorderThickness="0" Padding="0"
+                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
+            <Image Source="/assets/botao-voltar.png" Stretch="Uniform"/>
+        </Button>
+
+        <!-- Botão Iniciar Animação no centro, deslocado para a direita -->
+        <Button Name="btnIniciar" Click="btnIniciar_Click"
+                Width="200" Height="150" Background="Transparent" BorderThickness="0" Padding="0"
+                HorizontalAlignment="Center" VerticalAlignment="Center" Margin="100,0,100,-450">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <!-- Remove qualquer fundo ou borda padrão -->
+                    <Setter Property="Background" Value="Transparent" />
+                    <Setter Property="BorderBrush" Value="Transparent" />
+                    <Setter Property="BorderThickness" Value="0" />
+                    <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
+
+                    <!-- Define um novo ControlTemplate para o botão -->
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <!-- Exibe apenas o conteúdo do botão -->
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+
+                    <!-- Triggers para interatividade -->
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)" To="-5" Duration="0:0:0.2" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)" To="0" Duration="0:0:0.2" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Opacity" Value="0.6" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <!-- Conteúdo do botão: Imagem -->
+            <Button.Content>
+                <Image Source="/assets/botao-iniciar-animacao.png" Stretch="Fill" Margin="-1,0,0,0" />
+            </Button.Content>
+        </Button>
+
+        <!-- Texto para exibir a largura do rio -->
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top"
+                   FontSize="20" Margin="0,10,0,0">
+            Largura do Rio: <TextBlock Name="WidthValue">600</TextBlock>
+        </TextBlock>
+    </Grid>
+</Window>

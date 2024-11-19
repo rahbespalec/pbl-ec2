@@ -1,0 +1,90 @@
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\obj\Debug\PBL-II-WPF.csproj.AssemblyReference.cache
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\obj\Debug\MainWindow.g.cs
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\obj\Debug\App.g.cs
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\obj\Debug\PBL-II-WPF_MarkupCompile.cache
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\obj\Debug\PBL-II-WPF_MarkupCompile.lref
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\PBL-II-WPF.exe.config
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\PBL-II-WPF.exe
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\PBL-II-WPF.pdb
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\obj\Debug\MainWindow.baml
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\obj\Debug\PBL-II-WPF.g.resources
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\obj\Debug\PBL_II_WPF.Properties.Resources.resources
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\obj\Debug\PBL-II-WPF.csproj.GenerateResource.cache
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\obj\Debug\PBL-II-WPF.csproj.CoreCompileInputs.cache
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\obj\Debug\PBL-II-WPF.exe
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\obj\Debug\PBL-II-WPF.pdb
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\obj\Debug\Instrucao.g.cs
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\obj\Debug\Instrucao.baml
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\obj\Debug\Principal.g.cs
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\obj\Debug\Principal.baml
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\EPPlus.dll
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\System.Buffers.dll
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\System.Drawing.Common.dll
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\System.Memory.dll
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\EPPlus.xml
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\System.Buffers.xml
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\System.Drawing.Common.pdb
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\System.Drawing.Common.xml
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\System.Memory.xml
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\obj\Debug\PBL-II-WPF.csproj.Up2Date
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\OxyPlot.dll
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\OxyPlot.Wpf.dll
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\OxyPlot.Wpf.Shared.dll
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\OxyPlot.xml
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\OxyPlot.Wpf.xml
+C:\Users\laura\Documents\FESA\Algoritmos II\PBL-II-WPF\PBL-II-WPF\bin\Debug\OxyPlot.Wpf.Shared.xml
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\PBL-II-WPF.exe.config
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\PBL-II-WPF.exe
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\PBL-II-WPF.pdb
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\EPPlus.dll
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\OxyPlot.dll
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\OxyPlot.Wpf.dll
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\OxyPlot.Wpf.Shared.dll
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\System.Buffers.dll
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\System.Drawing.Common.dll
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\System.Memory.dll
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\EPPlus.xml
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\OxyPlot.xml
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\OxyPlot.Wpf.xml
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\OxyPlot.Wpf.Shared.xml
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\System.Buffers.xml
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\System.Drawing.Common.pdb
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\System.Drawing.Common.xml
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\System.Memory.xml
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\obj\Debug\PBL-II-WPF.csproj.AssemblyReference.cache
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\obj\Debug\Instrucao.g.cs
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\obj\Debug\MainWindow.g.cs
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\obj\Debug\Principal.g.cs
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\obj\Debug\App.g.cs
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\obj\Debug\PBL-II-WPF_MarkupCompile.cache
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\obj\Debug\PBL-II-WPF_MarkupCompile.lref
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\obj\Debug\Instrucao.baml
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\obj\Debug\MainWindow.baml
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\obj\Debug\Principal.baml
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\obj\Debug\PBL-II-WPF.g.resources
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\obj\Debug\PBL_II_WPF.Properties.Resources.resources
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\obj\Debug\PBL-II-WPF.csproj.GenerateResource.cache
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\obj\Debug\PBL-II-WPF.csproj.CoreCompileInputs.cache
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\obj\Debug\PBL-II-WPF.csproj.CopyComplete
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\obj\Debug\PBL-II-WPF.exe
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\obj\Debug\PBL-II-WPF.pdb
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\obj\Debug\Animacao.baml
+C:\Users\rbdra\Downloads\PBL-oficial\PBL-II-main\PBL-II-WPF\obj\Debug\Animacao.g.cs

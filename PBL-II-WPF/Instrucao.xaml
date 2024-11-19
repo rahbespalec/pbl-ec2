@@ -1,0 +1,231 @@
+﻿<Window x:Class="PBL_II_WPF.Instrucao"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PBL_II_WPF"
+        mc:Ignorable="d"
+        Title="Instrucao" Height="450" Width="800">
+    <Grid>
+        <!-- Define as linhas para estruturar o layout verticalmente -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+        <!-- Define 10 colunas para estruturar o layout horizontalmente -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <!-- Margem esquerda -->
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10"/>
+            <!-- Margem direita -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Define o fundo da Grid -->
+        <Grid.Background>
+            <ImageBrush ImageSource="/assets/fundo.jpeg"/>
+        </Grid.Background>
+
+         <!-- Retângulo centralizado para fundo do conteúdo -->
+        <Rectangle Grid.Row="1" Grid.RowSpan="7" Grid.Column="2" Grid.ColumnSpan="6"
+        HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+        Margin="10" Fill="#FFCCAC00" />
+
+        <!-- Viewbox para centralizar e redimensionar o título -->
+        <Viewbox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="6" VerticalAlignment="Center">
+            <Label Name="lblInfoTitulo" Content="Instruções"
+            HorizontalAlignment="Center"
+            FontFamily="Book Antiqua" FontSize="45" FontWeight="Bold" />
+        </Viewbox>
+        
+        <!-- Viewbox para centralizar e redimensionar o texto de instruções -->
+        <Viewbox Grid.Row="2" Grid.RowSpan="6" Grid.Column="2" Grid.ColumnSpan="6" Margin="0,28,0,23">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top"
+                   TextWrapping="Wrap" FontFamily="Book Antiqua" FontSize="20"
+                   Margin="20,10,20,10" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="0.615"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="1.027"/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+                Você irá decidir a trajetória do barquinho. Serão solicitados os seguintes dados:
+                <LineBreak/>
+                <LineBreak/>
+        
+                L - Largura do rio (entre 20 e 100m)
+                <LineBreak/>
+                <LineBreak/>
+        
+                Vma - Velocidade imposta pelo motor em relação à água (entre 2m/s e 10m/s)
+                <LineBreak/>
+                <LineBreak/>
+        
+                Vc - Velocidade da correnteza (entre 1m/s e 4m/s)
+                <LineBreak/>
+                <LineBreak/>
+        
+                <Label Content="θ - Ângulo de orientação do barco em relação à margem de partida (20º &lt; θ &lt; 160º)" />
+            </TextBlock>
+        </Viewbox>
+
+        <!-- Adicionando o botão de imagem na célula central da Grid -->
+        <Button Name="btnOk"
+        Grid.Row="8" Grid.Column="4" Grid.ColumnSpan="2"
+        HorizontalAlignment="Center" VerticalAlignment="Center"
+        Click="btnOk_Click" Background="{x:Null}" Foreground="{x:Null}">
+
+            <Button.Style>
+                <Style TargetType="Button">
+                    <!-- Define o estilo do botão, focado em alterar as propriedades visuais do botão em diferentes estados. -->
+
+                    <Setter Property="Background" Value="Transparent" />
+                    <Setter Property="BorderBrush" Value="Transparent" />
+                    <!-- Define que o fundo e a borda do botão devem ser transparentes por padrão, 
+             para que apenas a imagem seja visível. -->
+
+                    <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
+                    <!-- Define que a transformação de renderização será centrada no botão, permitindo animações suaves. -->
+
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <!-- Redefine o ControlTemplate para exibir apenas o conteúdo do botão, sem estilos visuais padrão. -->
+
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand" />
+                            <!-- Altera o cursor para "mão" ao passar o mouse sobre o botão. -->
+
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)" To="-5" Duration="0:0:0.2" />
+                                        <!-- Animação de elevação suave ao passar o mouse. -->
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)" To="0" Duration="0:0:0.2" />
+                                        <!-- Retorna o botão à posição original ao remover o mouse. -->
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Opacity" Value="0.6" />
+                        </Trigger>
+                        <!-- Quando o botão é pressionado, a opacidade é reduzida para 0.6, criando um efeito visual de clique. -->
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.RenderTransform>
+                <TranslateTransform x:Name="Transform" />
+            </Button.RenderTransform>
+            <!-- Define uma transformação de tradução para ser usada na animação de elevação. -->
+
+            <Button.Content>
+                <Image Name="Ok" Source="/assets/botao-ok.png" Stretch="Fill" Margin="-1,0,0,0" />
+                <!-- Define a imagem "botao-ok.png" como conteúdo do botão, preenchendo toda a área do botão.
+                O Stretch="Fill" faz com que a imagem se ajuste ao tamanho do botão. 
+            -->
+            </Button.Content>
+        </Button>
+
+        <!-- Botão volta -->
+        <Button Name="btnVoltar"
+               Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1"
+               HorizontalAlignment="Center" VerticalAlignment="Center"
+               Click="btnVoltar_Click" Background="{x:Null}" Foreground="{x:Null}">
+
+
+            <Button.Style>
+                <Style TargetType="Button">
+                    <!-- Define o estilo do botão, focado em alterar as propriedades visuais do botão em diferentes estados. -->
+
+                    <Setter Property="Background" Value="Transparent" />
+                    <Setter Property="BorderBrush" Value="Transparent" />
+                    <!-- Define que o fundo e a borda do botão devem ser transparentes por padrão, 
+                             para que apenas a imagem seja visível. -->
+
+                    <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
+                    <!-- Define que a transformação de renderização será centrada no botão, permitindo animações suaves. -->
+
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <!-- Redefine o ControlTemplate para exibir apenas o conteúdo do botão, sem estilos visuais padrão. -->
+
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand" />
+                            <!-- Altera o cursor para "mão" ao passar o mouse sobre o botão. -->
+
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)" To="-5" Duration="0:0:0.2" />
+                                        <!-- Animação de elevação suave ao passar o mouse. -->
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)" To="0" Duration="0:0:0.2" />
+                                        <!-- Retorna o botão à posição original ao remover o mouse. -->
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Opacity" Value="0.6" />
+                        </Trigger>
+                        <!-- Quando o botão é pressionado, a opacidade é reduzida para 0.6, criando um efeito visual de clique. -->
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Content>
+                <Image Name="Voltar" Source="/assets/botao-voltar.png" Stretch="Fill" Margin="-1,0,0,0" />
+                <!-- Define a imagem "botao jogar.png" como conteúdo do botão, preenchendo toda a área do botão.
+                   O Stretch="Fill" faz com que a imagem se ajuste ao tamanho do botão. 
+               -->
+            </Button.Content>
+        </Button>
+
+    </Grid>
+</Window>

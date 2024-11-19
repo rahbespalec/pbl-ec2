@@ -1,0 +1,102 @@
+﻿<Window x:Class="PBL_II_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PBL_II_WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Name="Inicio">
+        
+        <!-- Definição de imagem de fundo -->
+        <Grid.Background>
+            <ImageBrush ImageSource="/assets/fundo.jpeg"/>
+        </Grid.Background>
+
+        <!-- Definições de GRID para estabelecer tamanhos -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Definição do título Lumi -->
+        <Image Name ="titulo" Source="/assets/lumihd.png" Stretch="Fill" Grid.ColumnSpan="4" Grid.RowSpan="2" Grid.Column="3" Margin="4,4,4,4" Grid.Row="2"/>
+
+        <Button Name="btnJogar" Grid.Column="4" Grid.ColumnSpan="2" Margin="4,4,4,4" Grid.RowSpan="2" Grid.Row="6" Click="btnJogar_Click">
+            <Button.RenderTransform>
+                <TranslateTransform x:Name="Transform" />
+            </Button.RenderTransform>
+
+            <Button.Style>
+                <Style TargetType="Button">
+                    <!-- Remove qualquer fundo ou borda padrão -->
+                    <Setter Property="Background" Value="Transparent" />
+                    <Setter Property="BorderBrush" Value="Transparent" />
+                    <Setter Property="BorderThickness" Value="0" />
+                    <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
+
+                    <!-- Define um novo ControlTemplate para o botão -->
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <!-- Exibe apenas o conteúdo do botão -->
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+
+                    <!-- Triggers para interatividade -->
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)" To="-5" Duration="0:0:0.2" />
+                                        <!-- Elevação suave ao passar o mouse -->
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)" To="0" Duration="0:0:0.2" />
+                                        <!-- Retorno à posição original -->
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Opacity" Value="0.6" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <!-- Conteúdo do botão: Imagem -->
+            <Button.Content>
+                <Image Name="joga" Source="/assets/botao-jogar.png" Stretch="Fill" Margin="-1,0,0,0" />
+            </Button.Content>
+        </Button>
+    </Grid>
+</Window>
