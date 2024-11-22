@@ -1,0 +1,78 @@
+﻿<Window x:Class="PBL_II_WPF.GraficoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:oxy="http://oxyplot.org/wpf"
+        Title="Gráfico" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/assets/fundo.jpeg"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Camada branca sobre o fundo -->
+        <Rectangle Fill="Orange" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="50">
+            <Rectangle.Effect>
+                <DropShadowEffect BlurRadius="10" ShadowDepth="5" Direction="315" Color="Gray" />
+            </Rectangle.Effect>
+        </Rectangle>
+
+        <!-- Gráfico -->
+        <oxy:PlotView x:Name="PlotView" Grid.Row="0"/>
+
+        <!-- Botão Voltar -->
+        <Button Name="btnVoltar" 
+                Grid.Row="1" 
+                Click="btnVoltar_Click"
+                Width="150" Height="50"
+                HorizontalAlignment="Center" 
+                Margin="10"
+                Background="{x:Null}" 
+                Foreground="{x:Null}">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="Transparent" />
+                    <Setter Property="BorderBrush" Value="Transparent" />
+                    <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)" 
+                                                       To="-5" Duration="0:0:0.2" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)" 
+                                                       To="0" Duration="0:0:0.2" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Opacity" Value="0.6" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Content>
+                <Image Source="/assets/botao-voltar.png" Stretch="Fill"/>
+            </Button.Content>
+        </Button>
+    </Grid>
+</Window>

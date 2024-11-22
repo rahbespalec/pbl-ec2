@@ -1,0 +1,176 @@
+﻿<Window x:Class="PBL_II_WPF.Historico"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PBL_II_WPF"
+        mc:Ignorable="d"
+        Title="Histórico" Height="450" Width="800">
+    <Window.Resources>
+        <!-- Estilos para botões e texto pixelado -->
+        <Style x:Key="PixelButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Pixelify sans"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Fundo antigo com textura ou padrão pixelado -->
+        <Grid.Background>
+            <ImageBrush ImageSource="/assets/fundo.jpeg"/>
+        </Grid.Background>
+
+        <!-- Botão Voltar -->
+        <Button Style="{StaticResource PixelButtonStyle}" 
+                Name="btnVoltar"
+                Grid.Row="1" 
+                Grid.Column="1" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top"
+                Margin="0,20,0,0"
+                Click="btnVoltar_Click">
+            <Image Source="/assets/botao-voltar.png" 
+                   Stretch="Fill" 
+                   Height="45"
+                   Width="70"
+                   Margin="-1,0,0,0"/>
+        </Button>
+
+        <!-- Conteúdo Principal -->
+        <Border Grid.Row="1"
+                Grid.RowSpan="2"
+                Grid.Column="2"
+                Background="#8b4513"
+                CornerRadius="10"
+                Opacity="0.95"
+                Margin="10,20"
+                MaxWidth="600">
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Título -->
+                <TextBlock Text="Histórico de Simulações" 
+                          FontFamily="Pixelify sans" 
+                          FontSize="22" 
+                          FontWeight="Bold"
+                          HorizontalAlignment="Center"
+                          Foreground="White"
+                          Margin="0,0,0,15"/>
+
+                <!-- Controles de Busca e Ordenação -->
+                <Grid Grid.Row="1" Margin="0,0,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBox x:Name="SearchBox" 
+                            Margin="0,0,10,0"
+                            Padding="5"
+                            Height="30"
+                            FontFamily="Pixelify sans"
+                            FontSize="12"
+                            Foreground="Black"
+                            Background="White"
+                            TextChanged="SearchBox_TextChanged"/>
+
+                    <ComboBox x:Name="SortComboBox" 
+                             Grid.Column="1"
+                             Width="150"
+                             Height="30"
+                             FontFamily="Pixelify sans"
+                             FontSize="12"
+                             Foreground="Black"
+                             Background="#333"
+                             SelectionChanged="SortComboBox_SelectionChanged">
+                        <ComboBoxItem Content="Data (Mais Recente)"/>
+                        <ComboBoxItem Content="Data (Mais Antiga)"/>
+                        <ComboBoxItem Content="Largura (Menor para maior)"/>
+                        <ComboBoxItem Content="Largura (Maior para menor)"/>
+                    </ComboBox>
+                </Grid>
+
+                <!-- Lista de Simulações -->
+                <ScrollViewer Grid.Row="2"
+                             VerticalScrollBarVisibility="Auto">
+                    <ItemsControl x:Name="SimulacoesItemsControl">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="#CCCCCC" 
+                                        BorderThickness="0,1"
+                                        Padding="8"
+                                        Margin="0,2">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <!-- Coluna da Esquerda -->
+                                        <StackPanel Grid.Column="0" Margin="0,0,15,0">
+                                            <TextBlock Text="{Binding Titulo}" 
+                                                      FontFamily="Pixelify sans"
+                                                      FontWeight="Bold"
+                                                      FontSize="14"
+                                                      Foreground="White"/>
+                                            <TextBlock FontFamily="Pixelify sans"
+                                                      FontSize="12"
+                                                      Foreground="White">
+                                                <Run Text="Data: "/>
+                                                <Run Text="{Binding DataHora, StringFormat={}{0:dd/MM/yy HH:mm}}"/>
+                                            </TextBlock>
+                                        </StackPanel>
+
+                                        <!-- Coluna da Direita -->
+                                        <StackPanel Grid.Column="1">
+                                            <TextBlock FontFamily="Pixelify sans"
+                                                      FontSize="12"
+                                                      Foreground="White"
+                                                      TextWrapping="Wrap">
+                                                <Run Text="L: "/>
+                                                <Run Text="{Binding Largura}"/>
+                                                <Run Text="m"/>
+                                                <Run Text=" | Â: "/>
+                                                <Run Text="{Binding Angulo}"/>
+                                                <Run Text="°"/>
+                                                <Run Text=" | VM: "/>
+                                                <Run Text="{Binding VelocidadeMotor}"/>
+                                                <Run Text="m/s"/>
+                                                <Run Text=" | VC: "/>
+                                                <Run Text="{Binding VelocidadeCorrenteza}"/>
+                                                <Run Text="m/s"/>
+                                            </TextBlock>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

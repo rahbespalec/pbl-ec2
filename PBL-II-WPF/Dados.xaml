@@ -1,0 +1,123 @@
+﻿<Window x:Class="PBL_II_WPF.Dados"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Dados" MinHeight="450" MinWidth="800"
+        Height="450" Width="800"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Fundo da página -->
+        <Grid.Background>
+            <ImageBrush ImageSource="/assets/fundo.jpeg"/>
+        </Grid.Background>
+
+        <!-- Botão Voltar -->
+        <Button 
+                Name="btnVoltar"
+                Grid.Row="1" 
+                Grid.Column="1" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top"
+                Margin="0,20,0,0"
+                Background="Transparent"
+                Click="btnVoltar_Click">
+            <Image Source="/assets/botao-voltar.png" 
+                   Stretch="Fill" 
+                   Height="45"
+                   Width="70"
+                   Margin="-1,0,0,0"/>
+        </Button>
+
+        <!-- Conteúdo Principal -->
+        <Border Grid.Row="1"
+                Grid.RowSpan="2"
+                Grid.Column="2"
+                Background="#8b4513"
+                CornerRadius="10"
+                Opacity="0.95"
+                Margin="10,20"
+                MaxWidth="600">
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Título -->
+                <TextBlock Text="Resultados" 
+                          FontFamily="Pixelify sans" 
+                          FontSize="22" 
+                          FontWeight="Bold"
+                          HorizontalAlignment="Center"
+                          Foreground="White"
+                          Margin="0,0,0,15"/>
+
+                <!-- Exibindo os dados inseridos -->
+                <Grid Grid.Row="2">
+                    <StackPanel>
+                        <TextBlock FontSize="16" Margin="5" Foreground="White">
+                            <Run Text="Largura: "/>
+                            <Run Text="{Binding Largura}"/>
+                            <Run Text="m"/>
+                        </TextBlock>
+                        <TextBlock FontSize="16" Margin="5" Foreground="White">
+                            <Run Text="Velocidade do Motor: "/>
+                            <Run Text="{Binding VelocidadeMotor}"/>
+                            <Run Text="m/s"/>
+                        </TextBlock>
+                        <TextBlock FontSize="16" Margin="5" Foreground="White">
+                            <Run Text="Velocidade da Correnteza: "/>
+                            <Run Text="{Binding VelocidadeCorrenteza}"/>
+                            <Run Text="m/s"/>
+                        </TextBlock>
+                        <TextBlock FontSize="16" Margin="5" Foreground="White">
+                            <Run Text="Ângulo: "/>
+                            <Run Text="{Binding Angulo}"/>
+                            <Run Text="°"/>
+                        </TextBlock>
+                        <TextBlock FontSize="16" Margin="5" Foreground="White">
+                            <Run Text="Velocidade Resultante: "/>
+                            <Run Text="{Binding VelocidadeResultante}"/>
+                            <Run Text="m/s"/>
+                        </TextBlock>
+                        <TextBlock FontSize="16" Margin="5" Foreground="White">
+                            <Run Text="Tempo de Travessia: "/>
+                            <Run Text="{Binding TempoTravessia}"/>
+                            <Run Text="s"/>
+                        </TextBlock>
+                        <TextBlock FontSize="16" Margin="5" Foreground="White">
+                            <Run Text="Distância X: "/>
+                            <Run Text="{Binding DistanciaX}"/>
+                            <Run Text="m"/>
+                        </TextBlock>
+                        <TextBlock FontSize="16" Margin="5" Foreground="White">
+                            <Run Text="Distância Y: "/>
+                            <Run Text="{Binding DistanciaY}"/>
+                            <Run Text="m"/>
+                        </TextBlock>
+                        <TextBlock FontSize="16" Margin="5" Foreground="White">
+                            <Run Text="Tempo Mínimo: "/>
+                            <Run Text="{Binding TempoMinimo}"/>
+                            <Run Text="s"/>
+                        </TextBlock>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

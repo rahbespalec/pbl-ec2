@@ -1,0 +1,112 @@
+﻿<Window x:Class="PBL_II_WPF.Instrucao"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PBL_II_WPF"
+        mc:Ignorable="d"
+        Title="Instrucao" Height="450" Width="800">
+    <Grid>
+        <!-- Define as linhas para estruturar o layout verticalmente -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+        <!-- Define 10 colunas para estruturar o layout horizontalmente -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <!-- Margem esquerda -->
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10"/>
+            <!-- Margem direita -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Define o fundo da Grid -->
+        <Grid.Background>
+            <ImageBrush ImageSource="/assets/fundo.jpeg"/>
+        </Grid.Background>
+
+        <!-- Retângulo centralizado para fundo do conteúdo -->
+        <Rectangle Grid.RowSpan="9" Grid.ColumnSpan="9"
+        Margin="-21,-53,0,0">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/assets/quadro.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <!-- Viewbox para centralizar e redimensionar o título -->
+        <Viewbox Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="6" VerticalAlignment="Center">
+            <Label Name="lblInfoTitulo" Content="Instruções"
+            HorizontalAlignment="Center"
+            FontFamily="Pixelify sans" FontSize="45" FontWeight="Bold" />
+        </Viewbox>
+
+        <!-- Viewbox para centralizar e redimensionar o texto de instruções -->
+        <Viewbox Grid.Row="2" Grid.RowSpan="6" Grid.Column="2" Grid.ColumnSpan="6" Margin="0,28,0,23">
+            <TextBlock TextWrapping="Wrap"
+                                 FontFamily="Pixelify sans"
+                                 FontSize="18"
+                                 Foreground="#FF333333"
+                                 LineHeight="30">
+                <Run Text="Você irá decidir a trajetória do barquinho. Serão solicitados os seguintes dados:"/>
+                <LineBreak/><LineBreak/>
+                <Run Text="► L - Largura do rio" FontWeight="Bold"/>
+                <Run Text="(entre 20 e 100m)"/>
+                <LineBreak/><LineBreak/>
+                <Run Text="► Vma - Velocidade imposta pelo motor em relação à água" FontWeight="Bold"/>
+                <Run Text="(entre 2m/s e 10m/s)"/>
+                <LineBreak/><LineBreak/>
+                <Run Text="► Vc - Velocidade da correnteza" FontWeight="Bold"/>
+                <Run Text="(entre 1m/s e 4m/s)"/>
+                <LineBreak/><LineBreak/>
+                <Run Text="► θ - Ângulo de orientação do barco" FontWeight="Bold"/>
+                <Run Text="(entre 20° e 160°)"/>
+            </TextBlock>
+        </Viewbox>
+
+        <!-- Adicionando o botão de imagem na célula central da Grid -->
+        <Button  Style="{StaticResource ImageButtonStyle}" Name="btnOk"
+        Grid.Row="1" Grid.Column="8" Grid.ColumnSpan="1"
+        HorizontalAlignment="Center" VerticalAlignment="Center"
+        Click="btnOk_Click" Background="{x:Null}" Foreground="{x:Null}">
+            <!--  Style="{StaticResource ImageButtonStyle}" se refere as configuraçõe do botão que esta dentro de app.xaml -->
+
+            <Image Name="Ok" Source="/assets/botao-ok.png" Stretch="Fill" Margin="-1,0,0,0" />
+            <!-- Define a imagem "botao jogar.png" como conteúdo do botão, preenchendo toda a área do botão.
+                  O Stretch="Fill" faz com que a imagem se ajuste ao tamanho do botão. 
+              -->
+
+        </Button>
+
+        <!-- Botão volta -->
+        <!--<Button Style="{StaticResource ImageButtonStyle}" Name="btnVoltar"
+               Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1"
+               HorizontalAlignment="Center" VerticalAlignment="Center"
+               Click="btnVoltar_Click" Background="{x:Null}" Foreground="{x:Null}">
+            --><!--  Style="{StaticResource ImageButtonStyle}" se refere as configuraçõe do botão que esta dentro de app.xaml --><!--
+
+            <Image Name="Voltar" Source="/assets/botao-voltar.png" Stretch="Fill" Margin="-1,0,0,0" />
+            --><!-- Define a imagem "botao jogar.png" como conteúdo do botão, preenchendo toda a área do botão.
+                   O Stretch="Fill" faz com que a imagem se ajuste ao tamanho do botão. 
+               --><!--
+
+        </Button>-->
+
+    </Grid>
+</Window>
