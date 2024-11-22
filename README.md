@@ -1,3 +1,5 @@
+
+```
 <Window x:Class="PBL_II_WPF.Animacao"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -90,6 +92,7 @@
         </Button>
     </Grid>
 </Window>
+```
 
 
 
@@ -114,8 +117,7 @@
 
 
 
-
-
+```
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -416,3 +418,4 @@ namespace PBL_II_WPF
         }
     }
 }
+```
